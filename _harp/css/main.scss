@@ -1,0 +1,28 @@
+//
+// User: daletan
+// Date: 5/11/15
+// Time: 7:30 PM
+// Copyright 1stdibs.com, Inc. 2015. All Rights Reserved.
+//
+
+@import "variables";
+
+body{
+    font-family: "Helvetica";
+    text-align: center;
+    padding: 50px 20px 0;
+    background: $bg-color;
+    color: #444;
+    margin: 0;
+}
+
+h1{
+    font-size: 65px;
+    line-height: 1.2em;
+    border-bottom: #CCC solid 1px;
+    padding: 20px 0;
+}
+
+h3{
+    font-weight: 300;
+}
