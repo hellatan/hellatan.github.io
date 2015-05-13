@@ -11,11 +11,20 @@
 var React = require('react');
 
 module.exports = React.createClass({
-    displayName: 'HelloReact',
-
     render() {
+        var script = (process.env.NODE_ENV!=='production') ? <script src="http://localhost:3000/scripts/bundle.js"></script> : '';
         return (
-            <div>Hello React</div>
+            <html>
+                <head>
+                    <title>{this.props.title}</title>
+                </head>
+                <body>
+                    {this.props.children}
+                    {script}
+                </body>
+            </html>
         );
     }
 });
+
+

@@ -9,7 +9,9 @@
 'use strict';
 
 var React = require('react');
-var Hello = require('./templates/Layout');
+var Layout = require('./templates/Layout');
 
 // React.renderToStaticMarkup(<Hello />);
-React.renderToStaticMarkup(<Hello />);
+//React.renderToStaticMarkup(<Hello />);
+
+React.render(<Layout title="React Static Site" >Hello World</Layout>, document);
