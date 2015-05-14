@@ -7,24 +7,42 @@
 
 'use strict';
 
+var webpack = require('webpack');
+
 module.exports = {
-    entry: './_src/index.jsx',
+    entry: [
+        'webpack-dev-server/client?http://localhost:3000',
+        'webpack/hot/dev-server',
+        './_src/index.jsx'
+    ],
+    //output: {
+    //    filename: 'bundle.js',
+    //    publicPath: 'http://localhost:8090/assets'
+    //},
     output: {
+        // Where to put build results when doing production builds:
+        // (Server doesn't write to the disk, but this is required.)
+        path: __dirname,
+
+        // JS filename you're going to use in HTML
         filename: 'bundle.js',
-        publicPath: 'http://localhost:8090/assets'
+
+        // Path you're going to use in HTML
+        publicPath: 'http://localhost:3000/scripts/'
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()
+    ],
+
+    resolve: {
+        // Allow to omit extensions when requiring these files
+        extensions: ['', '.js', '.jsx']
     },
     module: {
         loaders: [
-            {
-                test: /\.jsx$/,
-                loader: 'jsx-loader?insertPragma=React.DOM&harmony'
-            }
+            // Pass *.jsx files through jsx-loader transform
+            { test: /\.jsx$/, loaders: ['react-hot', 'jsx'] },
         ]
-    },
-    externals: {
-        'react': 'React'
-    },
-    resolve: {
-        extensions: ['', '.js', '.jsx']
     }
+
 };

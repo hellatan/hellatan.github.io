@@ -11,7 +11,7 @@
 var React = require('react');
 
 module.exports = React.createClass({
-    render() {
+    render: function () {
         var script = (process.env.NODE_ENV!=='production') ? <script src="http://localhost:3000/scripts/bundle.js"></script> : '';
         return (
             <html>
