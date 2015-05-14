@@ -2,7 +2,7 @@
   "name": "hellatan.github.io",
   "version": "1.0.0",
   "description": "",
-  "main": "index.jsx",
+  "main": "_src/entry.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "./node_modules/.bin/http-server -p 8080",

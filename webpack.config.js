@@ -13,7 +13,7 @@ module.exports = {
     entry: [
         'webpack-dev-server/client?http://localhost:3000',
         'webpack/hot/dev-server',
-        './_src/index.jsx'
+        './_src/entry.jsx'
     ],
     //output: {
     //    filename: 'bundle.js',
