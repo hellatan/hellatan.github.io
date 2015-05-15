@@ -21,7 +21,7 @@ module.exports = React.createClass({
         };
     },
     render() {
-        var title = paths.titleForPath(this.getPathname());
+        var title = paths.titleForPath(this.getPathname()) + ' - React Static Site';
         var script = (process.env.NODE_ENV!=='production') ? <script src="http://localhost:3000/scripts/bundle.js"></script> : '';
         return (
             <html>

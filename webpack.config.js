@@ -36,7 +36,8 @@ var resolveCommon = {
 var moduleCommon = {
     loaders: [
         // Pass *.jsx files through jsx-loader transform
-        { test: /\.jsx?$/, loaders: ['react-hot', 'babel'] }
+        { test: /\.jsx?$/, loaders: ['react-hot', 'babel'] },
+        { test: /\.html$/, loader: 'raw' }
         //,
         //{ test: /\.scss$/, loaders: 'style!css!sass?outputStyle=expanded&includePaths[]=' + (path.resolve(__dirname, "./node_modules")) }
     ]

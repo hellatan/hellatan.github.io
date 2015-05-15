@@ -14,13 +14,12 @@ var NotFoundRoute = Router.NotFoundRoute;
 var DefaultRoute = Router.DefaultRoute;
 var RouteHandler = Router.RouteHandler;
 var Layout = require('./templates/Layout');
-var Home = require('./templates/pages/Home');
-var About = require('./templates/pages/About');
+var Page = require('./templates/pages/Page');
 
 var Routes = (
    <Route name="home" path="/" handler={Layout}>
-       <Route name="about" handler={About} />
-       <DefaultRoute handler={Home} />
+       <Route name="about" handler={Page} />
+       <DefaultRoute handler={Page} />
    </Route>
 );
 
