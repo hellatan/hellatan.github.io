@@ -11,19 +11,22 @@ var React = require('react');
 var LayoutNav = require('./elements/LayoutNav');
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
+var paths = require('../paths');
 
 module.exports = React.createClass({
+    mixins: [Router.State],
     getDefaultProps() {
         return {
             title: 'React Static Site'
         };
     },
     render() {
+        var title = paths.titleForPath(this.getPathname());
         var script = (process.env.NODE_ENV!=='production') ? <script src="http://localhost:3000/scripts/bundle.js"></script> : '';
         return (
             <html>
                 <head>
-                    <title>{this.props.title}</title>
+                    <title>{title}</title>
                 </head>
                 <body>
                     <div id="layout">
