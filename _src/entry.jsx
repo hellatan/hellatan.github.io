@@ -8,7 +8,6 @@
 'use strict';
 
 var React = require('react');
-var Layout = require('./templates/Layout');
 var Router = require('react-router');
 var Routes = require('./Routes');
 
