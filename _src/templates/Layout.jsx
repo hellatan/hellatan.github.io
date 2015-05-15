@@ -1,4 +1,3 @@
-/** @jsx React.DOM */
 /**
  * User: daletan
  * Date: 5/12/15
@@ -9,9 +8,17 @@
 'use strict';
 
 var React = require('react');
+var LayoutNav = require('./elements/LayoutNav');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
 
 module.exports = React.createClass({
-    render: function () {
+    getDefaultProps() {
+        return {
+            title: 'React Static Site'
+        };
+    },
+    render() {
         var script = (process.env.NODE_ENV!=='production') ? <script src="http://localhost:3000/scripts/bundle.js"></script> : '';
         return (
             <html>
@@ -19,7 +26,13 @@ module.exports = React.createClass({
                     <title>{this.props.title}</title>
                 </head>
                 <body>
-                    {this.props.children}
+                    <div id="layout">
+                        <LayoutNav />
+                        <main role="main">
+                            {this.props.children}
+                            <RouteHandler />
+                        </main>
+                    </div>
                     {script}
                 </body>
             </html>

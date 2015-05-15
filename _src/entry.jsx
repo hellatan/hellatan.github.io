@@ -1,4 +1,3 @@
-/** @jsx React.DOM */
 /**
  * User: daletan
  * Date: 5/12/15
@@ -10,8 +9,11 @@
 
 var React = require('react');
 var Layout = require('./templates/Layout');
+var Router = require('react-router');
+var Routes = require('./Routes');
 
-// React.renderToStaticMarkup(<Hello />);
-//React.renderToStaticMarkup(<Hello />);
+require('./css/style.scss');
 
-React.render(<Layout title="React Static Site" >Hello World</Layout>, document);
+Router.run(Routes, Router.HistoryLocation, Handler => {
+    React.render(React.createElement(Handler, null), document);
+});

@@ -7,7 +7,23 @@
 
 'use strict';
 
+var path = require('path');
 var webpack = require('webpack');
+
+var babelConfig = {
+    whitelist: [
+        'es6.arrowFunctions',
+        'es6.properties.shorthand',
+        'es6.properties.computed',
+        'es6.destructuring',
+        'es6.parameters.default',
+        'es6.parameters.rest',
+        'es6.templateLiterals',
+        'es6.blockScoping',
+        'runtime',
+        'react'
+    ]
+};
 
 module.exports = {
     entry: [
@@ -41,7 +57,9 @@ module.exports = {
     module: {
         loaders: [
             // Pass *.jsx files through jsx-loader transform
-            { test: /\.jsx$/, loaders: ['react-hot', 'jsx'] },
+            { test: /\.jsx?$/, loaders: ['react-hot-loader', 'babel-loader'] }
+            //,
+            //{ test: /\.scss$/, loaders: 'style!css!sass?outputStyle=expanded&includePaths[]=' + (path.resolve(__dirname, "./node_modules")) }
         ]
     }
 
