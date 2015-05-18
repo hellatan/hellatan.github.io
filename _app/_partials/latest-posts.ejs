@@ -1,0 +1,11 @@
+<% var postData = public.posts._data %>
+    <ul>
+        <% for (var slug in postData) { %>
+            <% var post = postData[slug] %>
+            <% if (post.published !== false) { %>
+                <li>
+                    <a href="<%= public._data.postsRoot %>/<%= slug %>"><%= post.title %></a>
+                </li>
+            <% } %>
+        <% } %>
+    </ul>

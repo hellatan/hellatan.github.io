@@ -7,9 +7,7 @@
 </head>
 <body>
     <%- yield %>
-    <footer id="footer">
-        <p>Copyright © 1stdibs</p>
-    </footer>
+    <%- partial('_partials/footer', { year: new Date() }) %>
 </body>
 </html>
 

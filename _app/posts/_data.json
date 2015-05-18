@@ -1,0 +1,9 @@
+{
+    "this-is-a-draft": {
+        "title": "This is a draft",
+        "published": false
+    },
+    "this-is-published": {
+        "title": "This is published"
+    }
+}
